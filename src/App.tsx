@@ -5,10 +5,14 @@ import ImageBlock from "./image-block/ImageBlock.tsx";
 
 function App() {
   return (
-    <div>
-      {mock.data.map((item: any) => {
-        return <ImageBlock type={item.type} images={item.images}></ImageBlock>;
-      })}
+    <div className="flex justify-center bg-amber-700 py-12">
+      <div className="w-[60%]">
+        {mock.data.map((item: any, index: number) => {
+          return (
+            <ImageBlock key={index} type={item.type} images={item.images} />
+          );
+        })}
+      </div>
     </div>
   );
 }
