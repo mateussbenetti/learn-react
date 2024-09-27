@@ -1,9 +1,7 @@
-import React from "react";
-import ImageBlockTitleAndDescription from "./ImageBlockTitleAndDescription.tsx";
-import ImageBlockStacked from "./ImageBlockStacked.tsx";
-import { url } from "inspector";
+import ImageBlockStacked from "./ImageBlockStacked";
+import ImageBlockTitleAndDescription from "./ImageBlockTitleAndDescription";
 
-export class ImageBlockModel {
+export interface ImageBlockModel {
   url: string;
   title: string;
   description: string;

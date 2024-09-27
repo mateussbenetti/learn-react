@@ -1,7 +1,4 @@
-import React from "react";
-import "./App.css";
-import ImageBlockPage from "./image-block/ImageBlockPage.tsx";
-import HomePage from "./home-page/HomePage.tsx";
+import HomePage from "./home-page/HomePage";
 
 function App() {
   // return <ImageBlockPage></ImageBlockPage>;

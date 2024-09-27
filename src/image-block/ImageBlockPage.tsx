@@ -1,6 +1,5 @@
-import React from "react";
+import ImageBlock from "./ImageBlock";
 import mock from "./mock/data.json";
-import ImageBlock from "./ImageBlock.tsx";
 
 export default function ImageBlockPage() {
   return (

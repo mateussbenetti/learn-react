@@ -1,6 +1,5 @@
-import React from "react";
 import { ImageBlockModel } from "./ImageBlock";
-import ImageBlockTitleAndDescription from "./ImageBlockTitleAndDescription.tsx";
+import ImageBlockTitleAndDescription from "./ImageBlockTitleAndDescription";
 
 export interface IImageBlockStackedProps {
   image: ImageBlockModel;
