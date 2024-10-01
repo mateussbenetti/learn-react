@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export default function HomePageHeader() {
   return (
     <div>
-      <div className="lg:hidden">
+      <div className="md:hidden">
         <div className="h-[60px] bg-slate-700 flex items-center justify-between p-6">
           <img
             className="w-[45px]"
@@ -16,9 +16,9 @@ export default function HomePageHeader() {
           </div>
         </div>
       </div>
-      <div className="hidden lg:block">
+      <div className="hidden md:block">
         <div className="flex w-full bg-slate-700 justify-center">
-          <div className="w-[70%]">
+          <div className="w-full max-w-6xl px-8">
             <div className="flex justify-between items-center h-[80px]">
               <img
                 className="flex-none w-[50px]"
@@ -46,7 +46,7 @@ export default function HomePageHeader() {
                     </a>
                   </div>
                 </div>
-                <div className="flex items-center w-[300px] ">
+                <div className="flex items-center w-[100px] lg:w-[200px]">
                   <label
                     htmlFor="search"
                     className="mb-2 text-sm font-medium text-white sr-only"
