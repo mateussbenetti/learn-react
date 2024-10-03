@@ -1,3 +1,4 @@
+import HomePageBody from "./HomePageBody";
 import HomePageFooter from "./HomePageFooter";
 import HomePageHeader from "./HomePageHeader";
 
@@ -5,7 +6,7 @@ export default function HomePage() {
   return (
     <div>
       <HomePageHeader />
-      <div className="h-[50px] bg-white"></div>
+      <HomePageBody />
       <HomePageFooter />
     </div>
   );
