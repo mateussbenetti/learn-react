@@ -1,4 +1,4 @@
-export default function HomePageProjectAddFlow() {
+export default function HomePageProjectAddVideoFlow() {
   return (
     <div>
       <div
@@ -6,21 +6,15 @@ export default function HomePageProjectAddFlow() {
         className=" bg-neutral-900 overflow-auto"
       >
         <div className="flex text-left text-white p-4 flex-wrap text-2xl font-bold ">
-          What type of content do you wish to add?
+          Would you like to upload your own video?
         </div>
 
         <div className="grid grid-cols-2 gap-4 px-4 w-full items-center text-center">
           <button className="flex bg-neutral-800 h-[100px] w-full text-white justify-center items-center text-center">
-            Link
+            Yes, upload
           </button>
           <button className="flex bg-neutral-800 h-[100px] w-full text-white justify-center items-center text-center">
-            Merch
-          </button>
-          <button className="flex bg-neutral-800 h-[100px] w-full text-white justify-center items-center text-center">
-            Video
-          </button>
-          <button className="flex bg-neutral-800 h-[100px] w-full text-white justify-center items-center text-center">
-            Post
+            No, I have a hyperlink
           </button>
         </div>
       </div>
