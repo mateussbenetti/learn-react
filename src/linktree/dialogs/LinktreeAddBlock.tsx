@@ -30,7 +30,7 @@ export default function LinktreeAddBlock({
           />
         );
       case BlockType.Video:
-        return <LinktreeAddVideo />;
+        return <LinktreeAddVideo onClose={() => setStep(1)} />;
       default:
         return <div>Block not implemented!</div>;
     }
