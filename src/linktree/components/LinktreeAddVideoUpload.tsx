@@ -1,13 +1,18 @@
 import { faPaperclip } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import LinktreeButton from "./LinktreeButton";
 
 interface ILinktreeAddVideoUploadProps {
-  onClose: () => void; // Função para voltar à etapa anterior
+  onClose: () => void;
 }
 
 export default function LinktreeAddVideoUpload({
   onClose,
 }: ILinktreeAddVideoUploadProps) {
+  function handleClick(): void {
+    throw new Error("Function not implemented.");
+  }
+
   return (
     <div>
       <div
@@ -27,12 +32,13 @@ export default function LinktreeAddVideoUpload({
         </div>
       </div>
       <div className="flex bg-neutral-800 gap-4 justify-center p-4">
-        <button
+        {/* <button
           onClick={onClose}
           className="flex bg-neutral-800 w-[50%] h-[50px] text-sm text-white justify-center text-center font-bold items-center rounded-sm"
         >
           Back
-        </button>
+        </button> */}
+        <LinktreeButton text="Back" onClick={onClose} disabled={false} />
         <button
           onClick={() => alert("Video added successfully!")}
           className="flex bg-blue-800 w-[50%] h-[50px] text-sm text-white justify-center text-center font-bold items-center rounded-sm"
