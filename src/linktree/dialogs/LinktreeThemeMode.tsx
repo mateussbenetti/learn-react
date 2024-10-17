@@ -1,6 +1,7 @@
 import { useState } from "react";
 import LinktreeDialog from "../components/LinktreeDialog";
 import { ThemeMode } from "../LinktreeModel";
+import LinktreeButton from "../components/LinktreeButton";
 
 export interface ILinktreeThemeModeProps {
   themeMode: ThemeMode;
@@ -54,18 +55,28 @@ export default function LinktreeThemeMode({
         </div>
       </div>
       <div className="flex tertiary-background gap-4 justify-center p-4">
-        <button
+        {/* <button
           onClick={() => onClose(themeMode)}
           className="tertiary-background primary-color cursor-pointer flex w-[50%] h-[50px] text-sm justify-center text-center font-bold items-center rounded-sm"
         >
           Back
-        </button>
-        <button
+        </button> */}
+        <LinktreeButton
+          text="Back"
+          type="tertiary"
+          onClick={() => onClose(themeMode)}
+        />
+        {/* <button
           onClick={() => onClose(mode)}
           className="secondary-background secondary-color cursor-pointer flex w-[50%] h-[50px] text-sm justify-center text-center font-bold items-center rounded-sm"
         >
           Save
-        </button>
+        </button> */}
+        <LinktreeButton
+          text="Save"
+          type="secondary"
+          onClick={() => onClose(mode)}
+        />
       </div>
     </LinktreeDialog>
   );
