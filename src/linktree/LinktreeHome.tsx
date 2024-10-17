@@ -11,6 +11,7 @@ import LinktreeAddBlock from "./dialogs/LinktreeAddBlock";
 import LinktreeThemeMode from "./dialogs/LinktreeThemeMode";
 import mockData from "./mock.json";
 import LinktreeLinkRenderer from "./renders/LinktreeLinkRenderer";
+import LinktreeButton from "./components/LinktreeButton";
 
 export default function LinktreeHome() {
   let [themeSettings, setThemeSettings] =
@@ -72,18 +73,33 @@ export default function LinktreeHome() {
           className="primary-background p-4"
         >
           <div className="flex gap-4 justify-center">
-            <button
+            {/* <button
               onClick={() => setshowAddBlockDialog(true)}
               className="secondary-background secondary-color cursor-pointer flex w-[50%] h-[50px] text-sm justify-center text-center font-bold items-center rounded-sm"
             >
               Add Block
-            </button>
-            <button
+            </button> */}
+            <div className="w-1/2">
+              <LinktreeButton
+                text="Add Block"
+                type="secondary"
+                onClick={() => setshowAddBlockDialog(true)}
+              />
+            </div>
+
+            {/* <button
               onClick={() => setShowThemeModeDialog(true)}
               className="secondary-background secondary-color cursor-pointer flex w-[50%] h-[50px] text-sm justify-center text-center font-bold items-center rounded-sm"
             >
               Settings
-            </button>
+            </button> */}
+            <div className="w-1/2">
+              <LinktreeButton
+                text="Settings"
+                type="secondary"
+                onClick={() => setShowThemeModeDialog(true)}
+              />
+            </div>
           </div>
           <div className="flex flex-wrap gap-4 mt-4">
             {links.map((link, index) => (

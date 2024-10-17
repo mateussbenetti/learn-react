@@ -2,6 +2,7 @@ import { useState } from "react";
 import LinktreeAddLink, { LinkModel } from "../components/LinktreeAddLink";
 import LinktreeAddVideo from "../components/LinktreeAddVideo";
 import LinktreeDialog from "../components/LinktreeDialog";
+import LinktreeButton from "../components/LinktreeButton";
 
 export enum BlockType {
   Link = "Link",
@@ -73,19 +74,30 @@ export default function LinktreeAddBlock({
             </div>
           </div>
           <div className="flex tertiary-background gap-4 justify-center p-4">
-            <button
+            {/* <button
               onClick={onClose}
               className="tertiary-background primary-color cursor-pointer flex w-[50%] h-[50px] text-sm justify-center text-center font-bold items-center rounded-sm"
             >
               Back
-            </button>
-            <button
+            </button> */}
+            <div className="w-1/2">
+              <LinktreeButton text="Back" onClick={onClose} type="tertiary" />
+            </div>
+            {/* <button
               disabled={!type}
               onClick={() => setStep(2)}
               className="secondary-background secondary-color cursor-pointer disabled:cursor-not-allowed disabled:opacity-40 flex w-[50%] h-[50px] text-sm justify-center text-center font-bold items-center rounded-sm"
             >
               Next
-            </button>
+            </button> */}
+            <div className="w-1/2">
+              <LinktreeButton
+                text="Next"
+                type="secondary"
+                onClick={() => setStep(2)}
+                disabled={!type}
+              />
+            </div>
           </div>
         </div>
       )}

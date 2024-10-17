@@ -2,6 +2,7 @@ import { faUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
+import LinktreeButton from "./LinktreeButton";
 
 export interface LinkModel {
   text: string;
@@ -85,19 +86,30 @@ export default function LinktreeAddLink({
         </div>
       </div>
       <div className="flex tertiary-background gap-4 justify-center p-4">
-        <button
+        {/* <button
           onClick={() => onPrevious()}
           className="tertiary-background primary-color cursor-pointer flex w-[50%] h-[50px] text-sm justify-center text-center font-bold items-center rounded-sm"
         >
           Back
-        </button>
-        <button
+        </button> */}
+        <LinktreeButton
+          text="Back"
+          type="tertiary"
+          onClick={() => onPrevious()}
+        />
+        {/* <button
           disabled={!text || !url}
           onClick={() => onSubmit({ text, url })}
           className="secondary-background secondary-color cursor-pointer disabled:cursor-not-allowed disabled:opacity-40 flex w-[50%] h-[50px] text-sm justify-center text-center font-bold items-center rounded-sm"
         >
           Save
-        </button>
+        </button> */}
+        <LinktreeButton
+          text="Save"
+          type="secondary"
+          onClick={() => onSubmit({ text, url })}
+          disabled={!text || !url}
+        />
       </div>
     </div>
   );
