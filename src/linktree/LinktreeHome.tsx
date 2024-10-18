@@ -3,6 +3,8 @@ import LinktreeHeader from "./LinktreeHeader";
 import {
   THEME_SETTINGS_DARK,
   THEME_SETTINGS_LIGHT,
+  THEME_SETTINGS_ORANGE,
+  THEME_SETTINGS_PURPLE,
   ThemeMode,
   ThemeSettings,
 } from "./LinktreeModel";
@@ -28,6 +30,10 @@ export default function LinktreeHome() {
         setThemeSettings(THEME_SETTINGS_LIGHT);
       } else if (value === ThemeMode.Dark) {
         setThemeSettings(THEME_SETTINGS_DARK);
+      } else if (value === ThemeMode.Orange) {
+        setThemeSettings(THEME_SETTINGS_ORANGE);
+      } else if (value === ThemeMode.Purple) {
+        setThemeSettings(THEME_SETTINGS_PURPLE);
       }
     }
 
@@ -45,6 +51,9 @@ export default function LinktreeHome() {
             color: ${themeSettings.primaryTextColor}
           }
           .secondary-color {
+            color: ${themeSettings.secondaryTextColor}
+          }
+            .secondary-color {
             color: ${themeSettings.secondaryTextColor}
           }
           .secondary-outline {
