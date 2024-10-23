@@ -86,24 +86,11 @@ export default function LinktreeAddLink({
         </div>
       </div>
       <div className="flex tertiary-background gap-4 justify-center p-4">
-        {/* <button
-          onClick={() => onPrevious()}
-          className="tertiary-background primary-color cursor-pointer flex w-[50%] h-[50px] text-sm justify-center text-center font-bold items-center rounded-sm"
-        >
-          Back
-        </button> */}
         <LinktreeButton
           text="Back"
           type="tertiary"
           onClick={() => onPrevious()}
         />
-        {/* <button
-          disabled={!text || !url}
-          onClick={() => onSubmit({ text, url })}
-          className="secondary-background secondary-color cursor-pointer disabled:cursor-not-allowed disabled:opacity-40 flex w-[50%] h-[50px] text-sm justify-center text-center font-bold items-center rounded-sm"
-        >
-          Save
-        </button> */}
         <LinktreeButton
           text="Save"
           type="secondary"

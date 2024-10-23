@@ -9,11 +9,12 @@ import {
   ThemeSettings,
 } from "./LinktreeModel";
 import { LinkModel } from "./components/LinktreeAddLink";
-import LinktreeAddBlock from "./dialogs/LinktreeAddBlock";
+import LinktreeAddBlock, { BlockType } from "./dialogs/LinktreeAddBlock";
 import LinktreeThemeMode from "./dialogs/LinktreeThemeMode";
 import mockData from "./mock.json";
 import LinktreeLinkRenderer from "./renders/LinktreeLinkRenderer";
 import LinktreeButton from "./components/LinktreeButton";
+import { keyboard } from "@testing-library/user-event/dist/keyboard";
 
 export default function LinktreeHome() {
   let [themeSettings, setThemeSettings] =
@@ -22,7 +23,8 @@ export default function LinktreeHome() {
 
   let [showThemeModeDialog, setShowThemeModeDialog] = useState<boolean>(false);
   let [showAddBlockDialog, setshowAddBlockDialog] = useState<boolean>(false);
-  let [links, setLinks] = useState<LinkModel[]>(mockData);
+  let [links, setLinks] = useState<LinkModel[]>(mockData.links);
+  let [embeds, setEmbeds] = useState<string[]>(mockData.embeds);
 
   function onThemeChange(value: ThemeMode, close: boolean): void {
     if (value) {
@@ -82,12 +84,6 @@ export default function LinktreeHome() {
           className="primary-background p-4"
         >
           <div className="flex gap-4 justify-center">
-            {/* <button
-              onClick={() => setshowAddBlockDialog(true)}
-              className="secondary-background secondary-color cursor-pointer flex w-[50%] h-[50px] text-sm justify-center text-center font-bold items-center rounded-sm"
-            >
-              Add Block
-            </button> */}
             <div className="w-1/2">
               <LinktreeButton
                 text="Add Block"
@@ -95,13 +91,6 @@ export default function LinktreeHome() {
                 onClick={() => setshowAddBlockDialog(true)}
               />
             </div>
-
-            {/* <button
-              onClick={() => setShowThemeModeDialog(true)}
-              className="secondary-background secondary-color cursor-pointer flex w-[50%] h-[50px] text-sm justify-center text-center font-bold items-center rounded-sm"
-            >
-              Settings
-            </button> */}
             <div className="w-1/2">
               <LinktreeButton
                 text="Settings"
@@ -123,6 +112,18 @@ export default function LinktreeHome() {
               />
             ))}
           </div>
+
+          <div className="flex flex-wrap gap-4 mt-4">
+            {embeds.map((html, index) => (
+              <div
+                className="w-full"
+                key={index}
+                dangerouslySetInnerHTML={{
+                  __html: html,
+                }}
+              ></div>
+            ))}
+          </div>
         </div>
       </div>
       {showThemeModeDialog && (
@@ -135,8 +136,18 @@ export default function LinktreeHome() {
       {showAddBlockDialog && (
         <LinktreeAddBlock
           onClose={() => setshowAddBlockDialog(false)}
-          onSave={(link) => {
-            setLinks([...links, link]);
+          onSave={(value, type) => {
+            switch (type) {
+              case BlockType.Link:
+                setLinks([...links, value]);
+                break;
+              case BlockType.Embed:
+                setEmbeds([...embeds, value]);
+                break;
+              default:
+                break;
+            }
+
             setshowAddBlockDialog(false);
           }}
         />

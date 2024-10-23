@@ -3,15 +3,17 @@ import LinktreeAddLink, { LinkModel } from "../components/LinktreeAddLink";
 import LinktreeAddVideo from "../components/LinktreeAddVideo";
 import LinktreeDialog from "../components/LinktreeDialog";
 import LinktreeButton from "../components/LinktreeButton";
+import LinktreeAddEmbed from "../components/LinktreeAddEmbed";
 
 export enum BlockType {
   Link = "Link",
   Video = "Video",
+  Embed = "Embed",
 }
 
 export interface ILinktreeAddBlockProps {
   onClose: () => void;
-  onSave: (model: LinkModel) => void;
+  onSave: (value: any, type: BlockType) => void;
 }
 
 export default function LinktreeAddBlock({
@@ -27,11 +29,20 @@ export default function LinktreeAddBlock({
         return (
           <LinktreeAddLink
             onPrevious={() => setStep(1)}
-            onSave={(model) => onSave(model)}
+            onSave={(value) => onSave(value, BlockType.Link)}
           />
         );
       case BlockType.Video:
         return <LinktreeAddVideo onClose={() => setStep(1)} />;
+
+      case BlockType.Embed:
+        return (
+          <LinktreeAddEmbed
+            onPrevious={() => setStep(1)}
+            onSave={(value) => onSave(value, BlockType.Embed)}
+          />
+        );
+
       default:
         return <div>Block not implemented!</div>;
     }
@@ -65,8 +76,13 @@ export default function LinktreeAddBlock({
               >
                 Video
               </button>
-              <button className="primary-color tertiary-background flex h-[100px] text-md font-semibold w-full justify-center items-center text-center">
-                Merch
+              <button
+                onClick={() => setType(BlockType.Embed)}
+                className={`${
+                  type === BlockType.Embed ? "secondary-outline" : ""
+                } primary-color tertiary-background flex h-[100px] text-md font-semibold w-full justify-center items-center text-center`}
+              >
+                Embed
               </button>
               <button className="primary-color tertiary-background flex h-[100px] text-md font-semibold w-full justify-center items-center text-center">
                 Post

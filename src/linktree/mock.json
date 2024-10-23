@@ -1,14 +1,20 @@
-[
-  {
-    "text": "Instagram profile",
-    "url": "https://www.instagram.com"
-  },
-  {
-    "text": "Youtube profile",
-    "url": "https://www.youtube.com"
-  },
-  {
-    "text": "Facebook profile",
-    "url": "https://www.facegook.com"
-  }
-]
+{
+  "links": [
+    {
+      "text": "Instagram profile",
+      "url": "https://www.instagram.com"
+    },
+    {
+      "text": "Youtube profile",
+      "url": "https://www.youtube.com"
+    },
+    {
+      "text": "Facebook profile",
+      "url": "https://www.facegook.com"
+    }
+  ],
+
+  "embeds": [
+    "<iframe src='https://open.spotify.com/embed/playlist/7BO7M7tLsgz9YUh0r2XsfA?utm_source=generator' width='100%' height='400px' allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture' loading='lazy'></iframe>"
+  ]
+}
