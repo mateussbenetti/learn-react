@@ -2,6 +2,7 @@ import {
   faBrush,
   faFile,
   faScrewdriverWrench,
+  faWrench,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -57,7 +58,9 @@ export default function CarsOurAdvantages() {
         </div>
       </div>
       <div className="p-4 mt-2 shadow-sm shadow-gray-500 rounded-md">
-        <div className="bg-blue-600 h-[48px] w-[48px] rounded-md"></div>
+        <div className="flex bg-blue-600 h-[48px] w-[48px] rounded-md text-white text-center justify-center items-center">
+          <FontAwesomeIcon className="h-[24px] w-[24px]" icon={faWrench} />
+        </div>
         <div className="font-bold text-lg pt-2">Assessment</div>
         <div className="text-gray-400 text-sm pt-2">
           At Autovalue you can bring your car in for us to estimate its sale
