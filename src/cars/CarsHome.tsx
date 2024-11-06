@@ -1,5 +1,6 @@
 import CarsCard from "./CarsCard";
 import CarsContactUs from "./CarsContactUs";
+import CarsFAQ from "./CarsFAQ";
 import CarsHeader from "./CarsHeader";
 import CarsOurAdvantages from "./CarsOurAdvantages";
 import CarsTopBrands from "./CarsTopBrands";
@@ -15,7 +16,8 @@ export default function CarsHome() {
       <CarsTopCategories />
       <CarsOurAdvantages />
       <CarsWhatWeOffer /> */}
-      <CarsContactUs />
+      {/* <CarsContactUs /> */}
+      <CarsFAQ />
     </div>
   );
 }
