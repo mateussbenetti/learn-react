@@ -44,19 +44,23 @@ export default function CarsFAQ() {
   return (
     <div className="font-inter p-4 gap-6">
       <div className="flex justify-between">
-        <div className="font-bold text-lg">Contact Us</div>
+        <div className="font-bold text-lg">FAQ</div>
       </div>
-      <div className="inline-block w-full max-w-screen-lg rounded-md mt-4">
+      <div className="inline-block w-full max-w-screen-lg rounded-md mt-4 gap-4">
         {accordionItems.map((item, index) => (
-          <div key={index} className="border-b border-gray-200">
-            <h2 className="text-lg">
+          <div key={index} className="">
+            <div
+              className={`flex justify-between ${
+                index !== 0 ? "pt-4" : ""
+              } p-0 shadow-sm shadow-gray-200 rounded-sm`}
+            >
+              <div className="text-md">{item.title}</div>
               <button
-                className="flex items-center text-left justify-between w-full py-4 px-5 bg-gray-100 text-gray-800"
+                className="flex items-center justify-center py-4 px-5 bg-gray-100 text-blue-600"
                 type="button"
                 onClick={() => toggleAccordion(index)}
                 aria-expanded={activeIndex === index}
               >
-                {item.title}
                 <svg
                   className={`w-5 h-5 transform transition-transform duration-200 ${
                     activeIndex === index ? "rotate-180" : ""
@@ -74,9 +78,11 @@ export default function CarsFAQ() {
                   />
                 </svg>
               </button>
-            </h2>
+            </div>
             {activeIndex === index && (
-              <div className="py-4 px-5 text-gray-600">{item.content}</div>
+              <div className="flex py-2 text-gray-400 text-sm">
+                {item.content}
+              </div>
             )}
           </div>
         ))}
