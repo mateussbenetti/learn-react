@@ -20,7 +20,7 @@ export default function LinktreeLinks() {
       )
     );
     console.log("Edited link:", editedLink);
-    setLinkToEdit(null); // Fecha o editor após salvar
+    setLinkToEdit(null);
   };
 
   return (

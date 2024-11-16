@@ -27,13 +27,13 @@ export default function LinktreeAddLinkNew({
       setValue("text", link.text);
       setValue("url", link.url);
     } else {
-      reset(); // Reseta os valores se não houver link para editar
+      reset();
     }
   }, [link, setValue, reset]);
 
   const submitHandler = (data: LinkModel) => {
     onSubmit(data);
-    reset(); // Limpa os campos após o envio
+    reset();
   };
 
   return (
