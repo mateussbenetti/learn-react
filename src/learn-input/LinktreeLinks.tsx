@@ -3,7 +3,17 @@ import LinktreeAddLinkNew, { LinkModel } from "./LinktreeAddLinkNew";
 
 export default function LinktreeLinks() {
   const [links, setLinks] = useState<LinkModel[]>([
-    { text: "Google", url: "https://google.com" },
+    {
+      text: "Google",
+      url: "https://google.com",
+      comment:
+        "Mussum Ipsum, cacilds vidis litro abertis. Nulla id" +
+        "gravida magna, ut semper sapien. Interagi no mé, cursus" +
+        "quis, vehicula ac nisi. Sapien in monti palavris qui num" +
+        "significa nadis i pareci latim. Quem num gosta di mé, boa" +
+        "gentis num é.",
+      option: "1",
+    },
   ]);
   const [linkToEdit, setLinkToEdit] = useState<LinkModel | null>(null);
 
@@ -39,7 +49,10 @@ export default function LinktreeLinks() {
                 onClick={() => setLinkToEdit(link)}
               >
                 <span>
-                  {link.text} - {link.url}
+                  {link.text} - {link.url} <br />
+                  <strong>Comentário:</strong> {link.comment}
+                  <br />
+                  <strong>Opção:</strong> {link.option} <br />
                 </span>
               </div>
             ))}

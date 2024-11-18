@@ -4,6 +4,8 @@ import { useForm } from "react-hook-form";
 export interface LinkModel {
   text: string;
   url: string;
+  option: string;
+  comment: string;
 }
 
 interface LinktreeAddLinkNewProps {
@@ -19,6 +21,8 @@ export default function LinktreeAddLinkNew({
     defaultValues: {
       text: "",
       url: "",
+      option: "1",
+      comment: "",
     },
   });
 
@@ -26,6 +30,8 @@ export default function LinktreeAddLinkNew({
     if (link) {
       setValue("text", link.text);
       setValue("url", link.url);
+      setValue("option", link.option || "1");
+      setValue("comment", link.comment || "");
     } else {
       reset();
     }
@@ -57,6 +63,24 @@ export default function LinktreeAddLinkNew({
           placeholder="URL"
           className="w-full p-2 border rounded"
         />
+      </div>
+      <div className="mb-2">
+        <textarea
+          {...register("comment")}
+          className="w-full h-[200px] p-2 border rounded"
+          placeholder="Digite um comentário"
+          rows={3}
+        />
+      </div>
+      <div className="mb-2">
+        <select
+          {...register("option", { required: true })}
+          className="w-full p-2 border rounded"
+        >
+          <option value="1">Opção 1</option>
+          <option value="2">Opção 2</option>
+          <option value="3">Opção 3</option>
+        </select>
       </div>
       <button
         type="submit"
