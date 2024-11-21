@@ -4,6 +4,7 @@ import LinktreeHome from "./linktree/LinktreeHome";
 import CarsCard from "./cars/CarsCard";
 import CarsHome from "./cars/CarsHome";
 import LinktreeLinks from "./learn-input/LinktreeLinks";
+import NewForm from "./learn-input/NewForm";
 
 library.add(fas);
 
@@ -12,7 +13,8 @@ function App() {
   //return <HomePage></HomePage>;
   // return <LinktreeHome />;
   // return <CarsHome />;
-  return <LinktreeLinks />;
+  // return <LinktreeLinks />;
+  return <NewForm />;
 }
 
 export default App;
