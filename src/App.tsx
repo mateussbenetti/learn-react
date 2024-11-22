@@ -5,6 +5,7 @@ import CarsCard from "./cars/CarsCard";
 import CarsHome from "./cars/CarsHome";
 import LinktreeLinks from "./learn-input/LinktreeLinks";
 import NewForm from "./learn-input/NewForm";
+import PokemonChoice from "./learn-input/PokemonChoice";
 
 library.add(fas);
 
@@ -14,7 +15,8 @@ function App() {
   // return <LinktreeHome />;
   // return <CarsHome />;
   // return <LinktreeLinks />;
-  return <NewForm />;
+  // return <NewForm />;
+  return <PokemonChoice />;
 }
 
 export default App;
